@@ -1,6 +1,6 @@
 FROM nvidia/cuda:11.3.0-base
 RUN apt update\
-  && apt install -y python3 python3-pip wget git zstd curl\
+  && apt install -y python3 python3-pip wget git git-lfs zstd curl\
   && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y nvidia-cuda-toolkit
 # RUN wget -c https://mystic.the-eye.eu/public/AI/GPT-J-6B/step_383500_slim.tar.zstd\
 #  && tar -I zstd -xf step_383500_slim.tar.zstd\
