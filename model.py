@@ -1,4 +1,4 @@
-from transformers import GPTJForCausalLM, AutoConfig, GPT2Tokenizer, AutoTokenizer
+from transformers import GPTNeoForCausalLM, AutoConfig, GPT2Tokenizer, AutoTokenizer
 import transformers
 import torch
 from datetime import datetime
@@ -23,7 +23,7 @@ tokenizer = transformers.GPT2Tokenizer.from_pretrained('gpt2')
 print('⌚ Model tokenizer created', format_timedelta(datetime.now()-t1))
         
 t1 = datetime.now()
-model = GPTJForCausalLM.from_pretrained('./gpt-j-6B')
+model = GPTNeoForCausalLM.from_pretrained('./gpt-j-6B')
 print('⌚ Model loaded (.from_pretrained)', format_timedelta(datetime.now()-t1))
 
 t1 = datetime.now()
