@@ -63,7 +63,7 @@ def eval(input):
         top_p=input.top_p,
         top_k=input.top_k,
         temperature=input.temperature,
-        eos_token_id: 50256 
+        eos_token_id=50256 
     )
     resp = tokenizer.decode(output[0], skip_special_tokens=True)
     print(f'⌚ Response time {format_timedelta(datetime.now() - t1)} in len: { len(input.text) } resp len { len(resp) }')
