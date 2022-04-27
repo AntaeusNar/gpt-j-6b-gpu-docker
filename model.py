@@ -44,7 +44,8 @@ output = model.generate(
     temperature=0.8,
     top_k=0,
     top_p=0.7,
-    eos_token_id=198
+    eos_token_id=198,
+    min_length=1
 )
 print('⌚ Test response time', format_timedelta(datetime.now() - t1))
 print('🤖 Test response', tokenizer.decode(output[0], skip_special_tokens=True))
@@ -64,7 +65,8 @@ def eval(input):
         top_p=input.top_p,
         top_k=input.top_k,
         temperature=input.temperature,
-        eos_token_id=198
+        eos_token_id=198,
+        min_length=1
     )
     resp = tokenizer.decode(output[0], skip_special_tokens=True)
     print(f'⌚ Response time {format_timedelta(datetime.now() - t1)} in len: { len(input.text) } resp len { len(resp) }')
