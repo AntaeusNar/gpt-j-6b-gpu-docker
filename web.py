@@ -10,6 +10,9 @@ class Input(BaseModel):
     top_k: float = 0
     temperature: float = 1.0
     text: str
+    eos_token_id: int = 198
+    min_length: int = 5
+    repetition_penalty: float = 0.2
 
 
 @app.post("/generate/")
