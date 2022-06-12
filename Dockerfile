@@ -1,10 +1,6 @@
-FROM nvidia/cuda:11.3.0-base
-RUN apt-key del 7fa2af80
-RUN curl -O https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb
-RUN dpkg -i cuda-keyring_1.0-1_all.deb
+FROM nvidia/cuda:11.3.0-base-ubuntu20.04
 RUN apt update
 RUN apt install -y python3 python3-pip wget git git-lfs zstd curl
-
 RUN apt install -y nvidia-cuda-toolkit
 RUN git clone https://github.com/kingoflolz/mesh-transformer-jax.git
 RUN pip3 install -r mesh-transformer-jax/requirements.txt
