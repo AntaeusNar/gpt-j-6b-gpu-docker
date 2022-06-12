@@ -1,7 +1,7 @@
 FROM nvidia/cuda:11.3.0-base
 RUN apt update\
   && apt install -y python3 python3-pip wget git git-lfs zstd curl\
-  && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y nvidia-cuda-toolkit
+  && apt install -y nvidia-cuda-toolkit
 RUN git clone https://github.com/kingoflolz/mesh-transformer-jax.git
 RUN pip3 install -r mesh-transformer-jax/requirements.txt
 RUN pip3 uninstall torch -y
