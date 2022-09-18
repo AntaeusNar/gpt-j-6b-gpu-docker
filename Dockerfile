@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.3.0-base-ubuntu20.04
+FROM nvidia/cuda:11.7.1-base-ubuntu20.04
 RUN apt update\
   && apt install -y python3 python3-pip wget git git-lfs zstd curl\
   && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y nvidia-cuda-toolkit
