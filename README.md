@@ -91,7 +91,7 @@ Body:
 ```
 
 
-For developemnt clone the repository and run on server:
+For development clone the repository and run on server:
 
 ```
 docker run -p8080:8080 --gpus all --rm -it $(docker build -q .)
